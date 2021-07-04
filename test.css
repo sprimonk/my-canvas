@@ -1,0 +1,258 @@
+@import url(https://fonts.googleapis.com/css?family=Lato);
+
+body {
+  margin: 0;
+}
+
+#background {
+  display: block;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: #3c005b;
+}
+
+#logocontainer {
+  display: block;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 28vh;
+  height: 28vh;
+  margin-left: -17vh;
+  margin-top: -17vh;
+  overflow: hidden;
+  transition: background-color 500ms;
+  cursor: pointer;
+  border-radius: 12px;
+}
+
+#pelogo {
+  display: block;
+  position: absolute;
+  left: 2vh;
+  top: 2vh;
+  width: 30vh;
+  height: 30vh;
+  background: #fff;
+  background-size: contain;
+  font-family: Trebuchet MS, sans-serif;
+  font-size: 20vh;
+  font-weight: bold;
+  color: #e67e22;
+  text-align: center;
+  line-height: 30vh;
+}
+
+#letter-e {
+  position: relative;
+  width: 40px;
+  height: 30px;
+  margin-top: 70px;
+  margin-left: 40px;
+  border-width: 10px 0 10px 10px;
+  border-style: solid;
+  border-color: #e67e22;
+  float: left;
+}
+
+#letter-e::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: -2px;
+  width: 40px;
+  height: 10px;
+  background: #e67e22;
+}
+
+#letter-e::after {
+  position: absolute;
+  content: "ternal";
+  top: -88px;
+  font-size: 1.5vh;
+  left: 2px;
+}
+
+#letter-p {
+  position: relative;
+  width: 40px;
+  height: 60px;
+  margin-left: 89.5px;
+  margin-top: 80px;
+  border-width: 0 0 0 10px;
+  border-style: solid;
+  border-color: #e67e22;
+}
+
+#letter-p::before {
+  content: "";
+  position: absolute;
+  left: -10px;
+  height: 10px;
+  width: 30px;
+  border-radius: 0 12.5px 12.5px 0;
+  border: 10px solid #e67e22;
+}
+
+#letter-p::after {
+  position: absolute;
+  content: "eace";
+  top: -80px;
+  font-size: 1.5vh;
+  left: 1px;
+}
+
+#letter-3 {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  border-width: 0px 10px 10px 10px;
+  border-style: solid;
+  border-color: transparent transparent transparent transparent;
+  background: transparent;
+}
+
+#letter-3::before {
+  content: "";
+  position: absolute;
+  left: -10px;
+  top: -10px;
+  height: 10px;
+  width: 30px;
+  background: transparent;
+  border-radius: 0 12.5px 12.5px 0;
+  border: 10px solid red;
+}
+
+#letter-3::after {
+  content: "";
+  position: absolute;
+  left: -10px;
+  bottom: -10px;
+  height: 10px;
+  width: 30px;
+  background: transparent;
+  border-radius: 0 12.5px 12.5px 0;
+  border: 10px solid red;
+}
+
+.loader {
+  display: block;
+  position: absolute;
+  background-color: #e67e22;
+}
+
+/*Pretty complex animation, so each side needs its own @keyframes.*/
+
+@keyframes slide1 {
+  50% {
+    width: 32vh;
+    margin-left: 0;
+  }
+  100% {
+    margin-left: 32vh;
+  }
+}
+
+@keyframes slide2 {
+  50% {
+    height: 32vh;
+    margin-top: 0;
+  }
+  100% {
+    margin-top: 32vh;
+  }
+}
+
+@keyframes slide3 {
+  50% {
+    width: 32vh;
+    margin-right: 0;
+  }
+  100% {
+    margin-right: 32vh;
+  }
+}
+
+@keyframes slide4 {
+  50% {
+    height: 32vh;
+    margin-bottom: 0;
+  }
+  100% {
+    margin-bottom: 32vh;
+  }
+}
+
+.heart {
+  fill: #e67e22;
+  position: relative;
+  top: 5px;
+  width: 50px;
+  animation: pulse 1s ease infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.numbers {
+  position: relative;
+  font-size: 20px;
+  line-height: 1em;
+  text-align: center;
+  margin-top: 4px;
+  overflow: hidden;
+}
+.numbers__window {
+  display: inline-block;
+  overflow: hidden;
+  width: 0.5em;
+  height: 1em;
+}
+.numbers__window__digit {
+  font: inherit;
+  word-break: break-all;
+  display: block;
+  width: 0;
+  padding: 0 0.5em 0 0;
+  margin: 0 auto;
+  overflow: inherit;
+  animation: counting 0.4s steps(10) forwards infinite;
+}
+.numbers__window__digit::before {
+  content: attr(data-fake);
+  display: inline-block;
+  width: 100%;
+  height: auto;
+}
+.numbers__window__digit--1 {
+  animation-iteration-count: 3;
+}
+.numbers__window__digit--2 {
+  animation-iteration-count: 6;
+}
+.numbers__window__digit--3 {
+  animation-iteration-count: 9;
+}
+.numbers__window__digit--4 {
+  animation-iteration-count: 12;
+}
+.numbers__window__digit--5 {
+  animation-iteration-count: 15;
+}
+
+@keyframes counting {
+  100% {
+    transform: translate3d(0, -10em, 0);
+  }
+}
